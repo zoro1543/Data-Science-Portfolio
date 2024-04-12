@@ -5,16 +5,16 @@ import pandas as pd
 import time
 import socket
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#server = socket.socket(socket.AF_INET, socket.SOCK_STREAM) (Not needed if needed to check in other systems)
 
-server.bind(('0.0.0.0', 9999))
+#server.bind(('0.0.0.0', 9999)) (Not needed if needed to check in other systems)
 
 # Load the dataframe
-with open(r'D:\ML\2.0\ML\Project\Price Predict\.venv\df.pkl', 'rb') as file:
+with open('.\df.pkl', 'rb') as file:
     df = pd.read_pickle(file)
 
 # Load the trained model
-with open(r'D:\ML\2.0\ML\Project\Price Predict\.venv\pipe.pkl', 'rb') as file:
+with open('.\pipe.pkl', 'rb') as file:
     model = pickle.load(file)
 
 st.title('Laptop Price Predictor')
